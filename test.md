@@ -46,3 +46,45 @@ int main(void){
     return 0;
 }
 ```
+* ******** 위아래로 움직이기
+```cs
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void position(int k) {
+    int i;
+    printf("-------------------------");
+    for (i = 0; i < k; i++) {
+        printf("\n");
+    }
+    printf("************");
+    for (i = 0; i < 20-k; i++) {
+        printf("\n");
+    }
+    printf("-------------------------\n");
+}
+
+int main(void) {
+    char x;
+    int n, p;
+    p = 10;
+    position(p);
+    for (;;) {
+        printf("방향, 이동수\n");
+        scanf(" %c %d", &x, &n);
+        if (x == 'w') {
+            p -= n;
+            position(p);
+        }
+        else if (x == 's') {
+            p += n;
+            position(p);
+        }
+        else {
+            break;
+        }
+    }
+
+    return 0;
+}
+```
